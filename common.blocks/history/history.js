@@ -84,7 +84,7 @@ BEM.decl('history', {
         var uri = BEM.blocks.uri,
             parsedUri = uri.parse(url);
         
-        if (parsedUri.anchor() === '') { return url; }
+        if(parsedUri.anchor() === '' || parsedUri.anchor()[0] !== '!') { return url; }
         var hashbangUri = uri.parse(parsedUri.anchor().replace(/^!/, ''));
         
         parsedUri.anchor('');
